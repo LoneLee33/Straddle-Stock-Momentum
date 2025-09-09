@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repo runs a **cross-sectional momentum backtest** using the classic **12–1 stock-return signal**. It’s a clean baseline and an easy scaffold for future **straddle-return momentum** on delta-neutral straddles.
+The repo conducts a **cross-sectional momentum backtest** using the typical **12-1 stock-return signal**. The code is a **clean reference** and **handy scaffold** for the eventual **straddle-return momentum** on **delta-neutral straddles**.
 
-Each month—on a calendar aligned to **third Fridays**—we compute every ticker’s 12–1 momentum from monthly returns and skip the most recent month. We then sort names into quantiles or pick top-N / bottom-N, build equal- or value-weighted portfolios, **hold for one month**, and evaluate out of sample. We track long–short **P&L**, **hit rate**, **turnover**, and **drawdowns**.
+**Monthly—on third Friday-aligned calendars**, we estimate each ticker's **12–1 momentum** from monthly returns and **disregard the most recent month**. We categorize tickers into **quantiles** or pick **top-N / bottom-N**, build **equal- or value-weighted portfolios**, **leave in place for one month**, and **validate out of sample**. We keep track of **long–short P&L**, **hit rate**, **turnover**, and **drawdowns**.
 
-The notebooks are modular. Daily prices roll up to monthly. Signals can be winsorized and universe-filtered. Portfolio formation is its own step, so swapping in a different signal is straightforward. A companion notebook reuses the same calendar and portfolio skeleton at the **options level**, testing **stop-loss** and **profit-taking** rules for straddles using daily mid quotes.
+**Modular notebooks.** **Daily prices add up to months.** **Signals** can be **winosored** and **universe-filtered**. **Portfolio construction** is its own step, so you can **readily switch in a new signal**. **there is a companion notebook** that reuses the same calendar and portfolio template at the **options level**, checking **stop-loss** and **profit-taking** rules for **straddles** using **daily mid prices**.
 
 ---
 
