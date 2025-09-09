@@ -1,8 +1,12 @@
 # Straddle-Stock-Momentum — Stock-Momentum Baseline for Option Momentum Research
 
-This repository implements a **cross‑sectional momentum backtest** using **stock returns** (12‑1 momentum) as the signal. It is designed as a **baseline** and scaffold for a full **straddle‑return momentum** strategy (delta‑neutral straddles). The code and data prep in the notebooks make it easy to switch the signal from stock‑return momentum to **straddle‑return momentum** later.
+## Overview
 
-> TL;DR: We build a monthly evaluation calendar (aligned to **third Fridays**), compute each ticker’s **12‑1 momentum** from past monthly stock returns (skip the most recent month), sort into groups (or top‑N / bottom‑N), hold one month, and track long‑short performance. A companion notebook explores **stop‑loss / profit‑booking** logic for straddles using daily mid quotes.
+This repo runs a **cross-sectional momentum backtest** using the classic **12–1 stock-return signal**. It’s a clean baseline and an easy scaffold for future **straddle-return momentum** on delta-neutral straddles.
+
+Each month—on a calendar aligned to **third Fridays**—we compute every ticker’s 12–1 momentum from monthly returns and skip the most recent month. We then sort names into quantiles or pick top-N / bottom-N, build equal- or value-weighted portfolios, **hold for one month**, and evaluate out of sample. We track long–short **P&L**, **hit rate**, **turnover**, and **drawdowns**.
+
+The notebooks are modular. Daily prices roll up to monthly. Signals can be winsorized and universe-filtered. Portfolio formation is its own step, so swapping in a different signal is straightforward. A companion notebook reuses the same calendar and portfolio skeleton at the **options level**, testing **stop-loss** and **profit-taking** rules for straddles using daily mid quotes.
 
 ---
 
